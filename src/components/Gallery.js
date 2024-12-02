@@ -33,12 +33,16 @@ function Gallery() {
   );
 
   return (
-    <div className="min-h-screen bg-[#FFFAF0]">
+    <div className="min-h-screen bg-[#290000]">
+      {/* Header with Parallax Effect */}
       <header
-        className="relative h-[700px] bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        className="relative h-[800px] bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundAttachment: 'fixed', // Enable the parallax effect
+        }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A2A40] to-transparent opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#290000] to-transparent opacity-90"></div>
         <Header />
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <motion.h1
@@ -58,8 +62,9 @@ function Gallery() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-24 mb-60">
-        <h2 className="text-6xl font-light text-center mb-20 text-[#1A2A40]">
+      {/* Main Content */}
+      <main className="container mx-auto px-16 py-24 mb-60">
+        <h2 className="text-6xl font-light text-center mb-20 text-[#FFFFFF]">
           Album <span className="text-[#D32F2F] font-semibold">Gallery</span>
         </h2>
 
@@ -84,11 +89,12 @@ function Gallery() {
           </select>
         </div>
 
+        {/* Album Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {filteredAlbums.map((album, index) => (
             <motion.div
               key={album._id}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-[#520000]  overflow-hidden shadow-md hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -100,15 +106,15 @@ function Gallery() {
                     alt={album.images[0].filename}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A2A40] to-transparent opacity-50"></div>
+                  <div className="absolute inset-0 "></div>
                 </div>
               )}
               <div className="p-8">
-                <h3 className="text-2xl font-semibold mb-3 text-[#1A2A40]">{album.Album_Category}</h3>
-                <p className="text-[#757575] mb-6">{album.Name}</p>
+                <h3 className="text-2xl font-semibold mb-3 text-[#FFFFFF]">{album.Album_Category}</h3>
+                <p className="text-[#FFFFFF] mb-6">{album.Name}</p>
                 <Link
                   to={`/album/${album._id}`}
-                  className="inline-block px-8 py-3 bg-[#D32F2F] text-[#FFFAF0] rounded-full hover:bg-[#FF0000] transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                  className="inline-block text-[#D32F2F] font-semibold hover:text-[#FF0000] transition-all duration-300 transform hover:scale-105"
                 >
                   View Album
                 </Link>

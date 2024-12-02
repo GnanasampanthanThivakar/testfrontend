@@ -15,8 +15,11 @@ module.exports = {
         'secondary-button': '#FFD700', // Gold
         'navbar-bg': '#1A2A40', // Dark Blue
         'footer-bg': '#1A2A40', // Dark Blue
+
+        
       },
     },
   },
   plugins: [],
+  
 }

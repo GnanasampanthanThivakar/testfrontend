@@ -1,112 +1,130 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { Carousel, Button, Card, Rate } from "antd"; // Added Rate for star ratings
+import testimonialImage from "../assets/images/o3e.png";
+import backgroundImage1 from "../assets/images/o2e.png";
+import backgroundImage2 from "../assets/images/9t.png";
+import backgroundImage3 from "../assets/images/o3e.png";
 
-// Import images
-import image1 from '../assets/images/bc1.png';
-import image2 from '../assets/images/bc2.png';
-import image3 from '../assets/images/bc3.png';
-import image4 from '../assets/images/bc3.png';
-import image5 from '../assets/images/bc1.png';
-import image6 from '../assets/images/bc1.png';
+const Testimonials = () => {
+  const testimonials = [
+    {
+      id: 1,
+      name: "Anju & Dananjaya",
+      feedback:
+        "We can’t thank Greenart Photography enough for the amazing job they did at our wedding. They were not just photographers; they were storytellers!",
+      image: testimonialImage,
+      rating: 5,
+    },
+    {
+      id: 2,
+      name: "John & Emma",
+      feedback:
+        "The photos were a perfect blend of art and emotion, capturing every nuance of our special day. Highly recommend them!",
+      image: testimonialImage,
+      rating: 4.5,
+    },
+    {
+      id: 3,
+      name: "Ravi & Priya",
+      feedback:
+        "Amazing experience! They truly made our wedding memorable with their incredible photography skills and attention to detail.",
+      image: testimonialImage,
+      rating: 5,
+    },
+    {
+      id: 4,
+      name: "Nihal & Nethmi",
+      feedback:
+        "Choosing Greenart Photography was the best decision we made for our wedding. Highly professional and creative!",
+      image: testimonialImage,
+      rating: 4,
+    },
+    {
+      id: 5,
+      name: "Sanjay & Kavya",
+      feedback:
+        "Every photo captured was full of life and joy. They were able to translate our happiness into beautiful memories.",
+      image: testimonialImage,
+      rating: 5,
+    },
+  ];
 
-const reviews = [
-  {
-    id: 1,
-    names: 'Suhashi & Chamupathy',
-    image: image1,
-    text: "Thank you so much, Mahesh and your super talented team for making my special day even more special with your photography. I must mention here that when I requested you at our first meeting, that I will need the edited pics and at least one complete album by the 2nd week of December 2019 you and your team went BEYOND my expectations and were able to give all the pictures with completed albums exactly as per the timeline."
-  },
-  {
-    id: 2,
-    names: 'Priya & Rahul',
-    image: image2,
-    text: "We couldn't be happier with the stunning photos from our wedding day. The team captured every moment beautifully, from the smallest details to the grandest celebrations. Their professionalism and creativity shone through in every shot."
-  },
-  {
-    id: 3,
-    names: 'Aisha & Omar',
-    image: image3,
-    text: "Working with this photography team was a dream come true. They made us feel so comfortable in front of the camera, and the results are breathtaking. Our wedding album is a treasure we'll cherish forever."
-  },
-  {
-    id: 4,
-    names: 'Emily & David',
-    image: image4,
-    text: "The photographers were like ninjas on our wedding day - everywhere but never intrusive. They captured moments we didn't even know happened! The photos tell the story of our day perfectly, and we're so grateful for their talent."
-  },
-  {
-    id: 5,
-    names: 'Mei & Jun',
-    image: image5,
-    text: "We were blown away by the creativity and attention to detail in our wedding photos. The team went above and beyond to capture the essence of our cultural fusion wedding. Every photo is a work of art."
-  },
-  {
-    id: 6,
-    names: 'Sofia & Alessandro',
-    image: image6,
-    text: "From our engagement shoot to the last dance at our reception, this photography team exceeded all our expectations. They have a gift for capturing genuine emotions and creating timeless images. We can't recommend them highly enough!"
-  }
-];
-
-const ClientReviewSweeper = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextReview = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-  };
-
-  const prevReview = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
-  };
+  const backgroundImages = [backgroundImage1, backgroundImage2, backgroundImage3];
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextReview();
-    }, 5000); // Change review every 5 seconds
-
+      setCurrentBgIndex((prevIndex) =>
+        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16 bg-gray-50 mb-40">
-      <h2 className="text-3xl font-light text-center text-gray-700 mb-2">
-        DISCOVER WHAT OTHERS HAVE EXPERIENCED
+    <div
+      className="relative flex flex-col items-center justify-center pb-60 pt-60  py-16 px-4 bg-cover bg-center transition-all duration-1000"
+      style={{
+        backgroundImage: `linear-gradient(to right, rgba(100, 0, 0, 0.9), rgba(82, 0, 0, 0.7)), url(${backgroundImages[currentBgIndex]})`,
+      }}
+    >
+      <h2 className="text-3xl md:text-4xl font-light text-white mb-10 text-center">
+        Words From Our <span className="font-semibold">Happy Couples</span>
       </h2>
-      <p className="text-center text-gray-600 mb-1">You deserve the absolute best.</p>
-      <p className="text-center text-gray-600 mb-12">That's why we want to make sure we are the right choice for you.</p>
 
-      <div className="flex items-center justify-center">
-        <button onClick={prevReview} className="text-3xl text-gray-400 hover:text-gray-600 transition-colors">
-          &#8249;
-        </button>
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            className="flex flex-col md:flex-row items-center justify-center mx-4 md:mx-12 bg-white rounded-lg shadow-lg overflow-hidden"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.3 }}
-          >
-            <img
-              src={reviews[currentIndex].image}
-              alt={reviews[currentIndex].names}
-              className="w-full md:w-1/2 h-64 md:h-96 object-cover"
-            />
-            <div className="p-6 md:w-1/2">
-              <div className="text-2xl font-semibold text-gray-800 mb-4">{reviews[currentIndex].names}</div>
-              <p className="text-gray-600 text-sm leading-relaxed">{reviews[currentIndex].text}</p>
+      <div className="w-full md:w-2/3 lg:w-1/2">
+        <Carousel autoplay>
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.id}>
+              <Card
+                className="shadow-lg"
+                style={{
+                  borderRadius: "8px",
+                  background: "#fff",
+                  padding: "20px",
+                }}
+              >
+                <div className="flex flex-col items-center">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-20 h-20 object-cover rounded-full border-4 border-[#D32F2F] shadow-md mb-4"
+                  />
+                  <p className="text-center text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed mb-2">
+                    {testimonial.feedback}
+                  </p>
+                  <Rate
+                    allowHalf
+                    disabled
+                    defaultValue={testimonial.rating}
+                    style={{ color: "#D32F2F" }}
+                    className="mb-2"
+                  />
+                  <h3 className="text-lg font-semibold text-[#1A2A40]">
+                    {testimonial.name}
+                  </h3>
+                </div>
+              </Card>
             </div>
-          </motion.div>
-        </AnimatePresence>
-
-        <button onClick={nextReview} className="text-3xl text-gray-400 hover:text-gray-600 transition-colors">
-          &#8250;
-        </button>
+          ))}
+        </Carousel>
       </div>
+
+      <Button
+        type="primary"
+        size="large"
+        className="mt-10 px-8 py-3"
+        style={{
+          backgroundColor: "#1A2A40",
+          borderColor: "#1A2A40",
+          color: "#fff",
+        }}
+        onClick={() => alert("More stories coming soon!")}
+      >
+        More Stories Shared
+      </Button>
     </div>
   );
 };
 
-export default ClientReviewSweeper;
+export default Testimonials;

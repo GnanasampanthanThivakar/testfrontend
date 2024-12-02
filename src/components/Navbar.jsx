@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/images/logo.png"; // Make sure this path is correct
 
-
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -19,28 +18,29 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "py-2 bg-[#1A2A40] shadow-lg" : "py-4 bg-transparent"
+        isScrolled ? "py-2 bg-[#290000] shadow-lg" : "py-4 bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img src={logo} alt="Logo" className="h-20 w-auto" />
-            {/* <span className="ml-2 text-xl font-bold text-[#1A2A40]">SJ Photography</span> */}
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 ">
             <NavLink to="/Hero">Home</NavLink>
             <NavLink to="/About">About</NavLink>
             <NavLink to="/gallery">Gallery</NavLink>
             <NavLink to="/services">Services</NavLink>
             <NavLink to="/contact">Contact</NavLink>
-            <Link
-              to="/book"
-              className="px-6 py-2 bg-[#D32F2F] text-[#FFFAF0] rounded-full font-medium hover:bg-[#FF0000] hover:text-[#1A2A40] transition duration-300"
+            <a
+              href="https://wa.me/94764481734" // Replace with your WhatsApp number
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-[#780000] text-[#FFFAF0] rounded-full font-medium hover:bg-[#FF0000] hover:text-[#1A2A40] transition duration-300"
             >
               Book Now
-            </Link>
+            </a>
           </div>
 
           <div className="md:hidden">
@@ -83,12 +83,14 @@ export default function Navbar() {
               <MobileNavLink to="/gallery">Gallery</MobileNavLink>
               <MobileNavLink to="/services">Services</MobileNavLink>
               <MobileNavLink to="/contact">Contact</MobileNavLink>
-              <Link
-                to="/book"
+              <a
+                href="https://wa.me/1234567890" // Replace with your WhatsApp number
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center px-3 py-2 rounded-md text-base font-medium bg-[#D32F2F] text-[#FFFAF0] hover:bg-[#FF0000] hover:text-[#1A2A40] transition duration-300"
               >
                 Book Now
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

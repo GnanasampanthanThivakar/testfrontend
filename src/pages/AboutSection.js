@@ -70,13 +70,7 @@ const AboutSection = () => {
           ))}
         </motion.div>
         <motion.div className="text-center mt-20" variants={itemVariants}>
-          <motion.button
-            className="bg-[#D32F2F] text-[#FFFAF0] px-10 py-4 rounded-full text-xl font-semibold hover:bg-[#E6E6FA] hover:text-[#D32F2F] transition duration-300 shadow-lg" // Red background, Floral white text, Lavender hover
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Learn More
-          </motion.button>
+         
         </motion.div>
       </div>
     </motion.div>

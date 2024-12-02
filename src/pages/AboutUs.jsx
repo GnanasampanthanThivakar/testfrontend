@@ -2,25 +2,42 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import backgroundImage from '../assets/images/b1.jpg'; // Use an appropriate background image
-import teamMember1 from '../assets/images/p1.jpg'; // Add team member images
-import teamMember2 from '../assets/images/p2.jpg';
-import teamMember3 from '../assets/images/p3.jpg';
+import backgroundImage from '../assets/images/group.JPG'; // Use an appropriate background image
+import teamMember1 from '../assets/images/sathish.JPG'; // Add team member images
+import teamMember2 from '../assets/images/jenish.JPG';
+import teamMember3 from '../assets/images/harish.JPG';
+import teamMember4 from '../assets/images/harithampi.JPG'; // Add more team member images
+import teamMember5 from '../assets/images/harithampi2.JPG';
+import teamMember6 from '../assets/images/gowtham.JPG';
+import teamMember7 from '../assets/images/banu.JPG';
+import teamMember8 from '../assets/images/piranavan.JPG';
+import teamMember9 from '../assets/images/lathu.JPG';
 
 function AboutUs() {
   const teamMembers = [
-    { name: 'SathisThevh ', role: 'Lead Photographer', image: teamMember1 },
+    { name: 'SathisThevh', role: 'Lead Photographer', image: teamMember1 },
     { name: 'Jenishan', role: 'Creative Director', image: teamMember2 },
     { name: 'Sathya', role: 'Editor', image: teamMember3 },
+    { name: 'Ravithran', role: 'Senior Photographer', image: teamMember4 },
+    { name: 'Vishal', role: 'Art Director', image: teamMember5 },
+    { name: 'Prabha', role: 'Lighting Specialist', image: teamMember6 },
+    { name: 'Anusha', role: 'Videographer', image: teamMember7 },
+    { name: 'Rajesh', role: 'Production Manager', image: teamMember8 },
+    { name: 'Kavitha', role: 'Customer Relations', image: teamMember9 },
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFFAF0] ">
+    <div className="min-h-screen bg-[#290000]">
       <header
         className="relative h-[700px] bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundAttachment: 'fixed', // Parallax effect
+          backgroundPosition: 'center center',
+          backgroundSize: 'cover',
+        }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A2A40] to-transparent opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#290000] to-transparent opacity-90"></div>
         <Navbar />
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <motion.h1
@@ -40,18 +57,18 @@ function AboutUs() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-24 ">
+      <main className="container mx-auto px-16 py-24">
         <section className="mb-20">
-          <motion.h2 
-            className="text-6xl font-light text-center mb-12 text-[#1A2A40]"
+          <motion.h2
+            className="text-6xl font-light text-center mb-12 text-[#FFFFFF]"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Our <span className="text-[#D32F2F] font-semibold">Story</span>
+            Our <span className="text-[#FFFFFF] font-semibold">Story</span>
           </motion.h2>
-          <motion.p 
-            className="text-xl text-[#757575] text-center max-w-3xl mx-auto"
+          <motion.p
+            className="text-xl text-[#FFFFFF] text-center max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -61,27 +78,27 @@ function AboutUs() {
         </section>
 
         <section className="mb-20">
-          <motion.h2 
-            className="text-6xl font-light text-center mb-12 text-[#1A2A40]"
+          <motion.h2
+            className="text-6xl font-light text-center mb-12 text-[#FFFFFF]"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Our <span className="text-[#D32F2F] font-semibold">Team</span>
+            Our <span className="text-[#FFFFFF] font-semibold">Team</span>
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-[#780000]  overflow-hidden shadow-md hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <img src={member.image} alt={member.name} className="w-full h-80 object-cover" />
                 <div className="p-8">
-                  <h3 className="text-2xl font-semibold mb-2 text-[#1A2A40]">{member.name}</h3>
-                  <p className="text-[#757575]">{member.role}</p>
+                  <h3 className="text-2xl font-semibold mb-2 text-[#FFFFFF]">{member.name}</h3>
+                  <p className="text-[#FFFFFF]">{member.role}</p>
                 </div>
               </motion.div>
             ))}
@@ -89,16 +106,16 @@ function AboutUs() {
         </section>
 
         <section>
-          <motion.h2 
-            className="text-6xl font-light text-center mb-12 text-[#1A2A40]"
+          <motion.h2
+            className="text-6xl font-light text-center mb-12 text-[#FFFFFF]"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Our <span className="text-[#D32F2F] font-semibold">Mission</span>
+            Our <span className="text-[#FFFFFF] font-semibold">Mission</span>
           </motion.h2>
-          <motion.p 
-            className="text-xl text-[#757575] text-center max-w-3xl mx-auto mb-60"
+          <motion.p
+            className="text-xl text-[#FFFFFF] text-center max-w-3xl mx-auto mb-60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
