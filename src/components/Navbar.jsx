@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/images/logo.png"; // Make sure this path is correct
+import logo from "../assets/images/logo.png"; // Ensure this path is correct
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,20 +21,22 @@ export default function Navbar() {
         isScrolled ? "py-2 bg-[#290000] shadow-lg" : "py-4 bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
+          {/* Logo Section */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Logo" className="h-20 w-auto" />
+            <img src={logo} alt="Logo" className="h-16 w-auto" />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8 ">
-            <NavLink to="/Hero">Home</NavLink>
-            <NavLink to="/About">About</NavLink>
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center space-x-6">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
             <NavLink to="/gallery">Gallery</NavLink>
-            <NavLink to="/services">Services</NavLink>
+            <NavLink to="/video">Services</NavLink>
             <NavLink to="/contact">Contact</NavLink>
             <a
-              href="https://wa.me/94764481734" // Replace with your WhatsApp number
+              href="https://wa.me/94764481734"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 bg-[#780000] text-[#FFFAF0] rounded-full font-medium hover:bg-[#FF0000] hover:text-[#1A2A40] transition duration-300"
@@ -43,6 +45,7 @@ export default function Navbar() {
             </a>
           </div>
 
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -68,6 +71,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -78,13 +82,13 @@ export default function Navbar() {
             className="md:hidden bg-[#1A2A40]"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <MobileNavLink to="/home">Home</MobileNavLink>
+              <MobileNavLink to="/">Home</MobileNavLink>
               <MobileNavLink to="/about">About</MobileNavLink>
               <MobileNavLink to="/gallery">Gallery</MobileNavLink>
-              <MobileNavLink to="/services">Services</MobileNavLink>
+              <MobileNavLink to="/video">Services</MobileNavLink>
               <MobileNavLink to="/contact">Contact</MobileNavLink>
               <a
-                href="https://wa.me/1234567890" // Replace with your WhatsApp number
+                href="https://wa.me/94764481734"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center px-3 py-2 rounded-md text-base font-medium bg-[#D32F2F] text-[#FFFAF0] hover:bg-[#FF0000] hover:text-[#1A2A40] transition duration-300"
@@ -115,7 +119,7 @@ function MobileNavLink({ to, children }) {
   return (
     <Link
       to={to}
-      className="block px-3 py-2 rounded-md text-base font-medium text-[#FFFAF0] hover:text-[#FFD700] hover:bg-[#1A2A40] transition duration-300"
+      className="block px-3 py-2 rounded-md text-base font-medium text-[#FFFAF0] hover:text-[#FFD700] hover:bg-[#290000] transition duration-300"
     >
       {children}
     </Link>

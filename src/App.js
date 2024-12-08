@@ -6,11 +6,13 @@ import Gallery from "./components/Gallery";
 import { UserContextProvider } from "./UserContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import AlbumPhotos from './components/AlbumPhotos';
+import AlbumPhotos from "./components/AlbumPhotos";
 
 // import ProtectedRoute from "../../Admin/admin/src/component/ProtectedRoute";
-import AboutUs from './pages/AboutUs'; 
+import AboutUs from "./pages/AboutUs";
 import ContactForm from "./pages/ContactForm";
+
+import VideoGallery from "./pages/VideoGallery";
 function App() {
   return (
     <UserContextProvider>
@@ -20,9 +22,10 @@ function App() {
             <Route path="/" element={<Hero />} />
             <Route path="/Hero" element={<Hero />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/about" element={<AboutUs />} />  // Note the capital 'U'
+            <Route path="/about" element={<AboutUs />} /> // Note the capital
+            'U'
+            <Route path="/video" element={<VideoGallery />} />
             <Route path="/contact" element={<ContactForm />} />
-           
             {/* <Route path="/Admindash" element={<Admindash />} /> */}
             {/* <Route 
           path="/Admindash" 
@@ -32,10 +35,7 @@ function App() {
             </ProtectedRoute>
           } 
         /> */}
-            
-            
-            <Route path="/album/:albumId" element={<AlbumPhotos/>} />
-            
+            <Route path="/album/:albumId" element={<AlbumPhotos />} />
           </Routes>
         </BrowserRouter>
       </div>
