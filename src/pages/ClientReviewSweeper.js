@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, Button, Card, Rate } from "antd"; // Added Rate for star ratings
 import testimonialImage from "../assets/images/o3e.png";
-import backgroundImage1 from "../assets/images/o2e.png";
-import backgroundImage2 from "../assets/images/9t.png";
+import backgroundImage1 from "../assets/images/o2e.jpg";
+import backgroundImage2 from "../assets/images/9t.jpg";
 import backgroundImage3 from "../assets/images/o3e.png";
 
 const Testimonials = () => {
@@ -49,7 +49,11 @@ const Testimonials = () => {
     },
   ];
 
-  const backgroundImages = [backgroundImage1, backgroundImage2, backgroundImage3];
+  const backgroundImages = [
+    backgroundImage1,
+    backgroundImage2,
+    backgroundImage3,
+  ];
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   useEffect(() => {

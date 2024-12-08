@@ -1,8 +1,8 @@
 import React from "react";
 import customImage from "../assets/images/o3e.png";
-import customImage1 from "../assets/images/01e.png";
-import customImage2 from "../assets/images/o2e.png";
-import customImage3 from "../assets/images/o4e.png";
+import customImage1 from "../assets/images/01e.jpg";
+import customImage2 from "../assets/images/o2e.jpg";
+import customImage3 from "../assets/images/o4e.jpg";
 import customImage4 from "../assets/images/ww3.jpg";
 
 const GallerySection2 = () => {
@@ -37,7 +37,7 @@ const GallerySection2 = () => {
             alt="Wedding Couple"
             className="w-full object-cover h-[600px] shadow-lg border-2 border-white"
           />
-          
+
           {/* Foreground Images */}
           <div className="absolute top-80 mt-10 flex gap-4 z-10 pt-5 -translate-x-80">
             <img

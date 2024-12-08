@@ -1,9 +1,9 @@
-import React from 'react';
-import customImage from '../assets/images/ww.jpg';
-import customImage1 from '../assets/images/gl1.png';
-import customImage2 from '../assets/images/gl2.png';
-import customImage3 from '../assets/images/02.png';
-import customImage4 from '../assets/images/gl2.png';
+import React from "react";
+import customImage from "../assets/images/ww.jpg";
+import customImage1 from "../assets/images/gl1.jpg";
+import customImage2 from "../assets/images/gl2.jpg";
+import customImage3 from "../assets/images/02.jpg";
+import customImage4 from "../assets/images/gl2.jpg";
 
 const GallerySection1 = () => {
   return (

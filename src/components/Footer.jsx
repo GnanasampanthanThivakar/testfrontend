@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import image1 from "../assets/images/10t.png";
-import image2 from "../assets/images/bc1.png";
-import image3 from "../assets/images/bc3.png";
-import image4 from "../assets/images/bc2.png";
-import image5 from "../assets/images/10t.png";
-import image6 from "../assets/images/10t.png";
+import image1 from "../assets/images/10t.jpg";
+import image2 from "../assets/images/bc1.jpg";
+import image3 from "../assets/images/bc3.jpg";
+import image4 from "../assets/images/bc2.jpg";
+import image5 from "../assets/images/10t.jpg";
+import image6 from "../assets/images/10t.jpg";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#520000] text-[#E0E0E0] pt-24 pb-8 relative px-4 sm:px-8 md:px-16 lg:px-24">
       {/* Image Gallery */}
-      <div className="absolute left-0 right-0 flex flex-wrap justify-center gap-4 -top-16">
+      {/* <div className="absolute left-0 right-0 flex flex-wrap justify-center gap-4 -top-16">
         {images.map((image, index) => (
           <img
             key={index}
@@ -29,7 +29,7 @@ const Footer = () => {
             onClick={() => handleImageClick(image)}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Image Viewer Modal */}
       {selectedImage && (

@@ -1,36 +1,42 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Footer from './Footer';
-import Header from './Navbar';
-import { motion } from 'framer-motion';
-import backgroundImage from '../assets/images/bc2.png';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Footer from "./Footer";
+import Header from "./Navbar";
+import { motion } from "framer-motion";
+import backgroundImage from "../assets/images/bc2.jpg";
 
 function Gallery() {
   const [albums, setAlbums] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8070/photographyweb/getdetails')
+    axios
+      .get("http://localhost:8070/photographyweb/getdetails")
       .then((response) => {
         setAlbums(response.data);
         // Extract unique categories
-        const uniqueCategories = [...new Set(response.data.map(album => album.Album_Category))];
+        const uniqueCategories = [
+          ...new Set(response.data.map((album) => album.Album_Category)),
+        ];
         setCategories(uniqueCategories);
       })
       .catch((error) => {
-        console.error('Error fetching albums:', error);
+        console.error("Error fetching albums:", error);
       });
   }, []);
 
-  const filteredAlbums = albums.filter(album => 
-    album.Album_Category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    album.Name.toLowerCase().includes(searchTerm.toLowerCase())
-  ).filter(album => 
-    selectedCategory ? album.Album_Category === selectedCategory : true
-  );
+  const filteredAlbums = albums
+    .filter(
+      (album) =>
+        album.Album_Category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        album.Name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .filter((album) =>
+      selectedCategory ? album.Album_Category === selectedCategory : true
+    );
 
   return (
     <div className="min-h-screen bg-[#290000]">
@@ -39,7 +45,7 @@ function Gallery() {
         className="relative h-[800px] bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundAttachment: 'fixed', // Enable the parallax effect
+          backgroundAttachment: "fixed", // Enable the parallax effect
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#290000] to-transparent opacity-90"></div>
@@ -84,7 +90,9 @@ function Gallery() {
           >
             <option value="">All Categories</option>
             {categories.map((category, index) => (
-              <option key={index} value={category}>{category}</option>
+              <option key={index} value={category}>
+                {category}
+              </option>
             ))}
           </select>
         </div>
@@ -110,7 +118,9 @@ function Gallery() {
                 </div>
               )}
               <div className="p-8">
-                <h3 className="text-2xl font-semibold mb-3 text-[#FFFFFF]">{album.Album_Category}</h3>
+                <h3 className="text-2xl font-semibold mb-3 text-[#FFFFFF]">
+                  {album.Album_Category}
+                </h3>
                 <p className="text-[#FFFFFF] mb-6">{album.Name}</p>
                 <Link
                   to={`/album/${album._id}`}

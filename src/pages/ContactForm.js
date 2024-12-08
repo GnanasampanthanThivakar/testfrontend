@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import backgroundImage from '../assets/images/11.png'; // Ensure this image path is correct
+import React from "react";
+import { motion } from "framer-motion";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import backgroundImage from "../assets/images/11.jpg"; // Ensure this image path is correct
 
 function ContactUs() {
   return (
@@ -12,9 +12,9 @@ function ContactUs() {
         className="relative h-[700px] bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundAttachment: 'fixed', // Parallax effect
-          backgroundPosition: 'center center',
-          backgroundSize: 'cover',
+          backgroundAttachment: "fixed", // Parallax effect
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#290000] to-transparent opacity-90"></div>
@@ -47,27 +47,36 @@ function ContactUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Contact <span className="text-[#FFD700] font-semibold">Information</span>
+            Contact{" "}
+            <span className="text-[#FFD700] font-semibold">Information</span>
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             {/* Address */}
             <div>
-              <h3 className="text-2xl text-[#FFD700] font-semibold mb-2">Address</h3>
+              <h3 className="text-2xl text-[#FFD700] font-semibold mb-2">
+                Address
+              </h3>
               <p className="text-[#FFFFFF]">123, Photography Lane, Jaffna</p>
             </div>
             {/* Phone */}
             <div>
-              <h3 className="text-2xl text-[#FFD700] font-semibold mb-2">Phone</h3>
+              <h3 className="text-2xl text-[#FFD700] font-semibold mb-2">
+                Phone
+              </h3>
               <p className="text-[#FFFFFF]">+94 123 456 789</p>
             </div>
             {/* Email */}
             <div>
-              <h3 className="text-2xl text-[#FFD700] font-semibold mb-2">Email</h3>
+              <h3 className="text-2xl text-[#FFD700] font-semibold mb-2">
+                Email
+              </h3>
               <p className="text-[#FFFFFF]">info@photographystudio.com</p>
             </div>
             {/* Opening Hours */}
             <div>
-              <h3 className="text-2xl text-[#FFD700] font-semibold mb-2">Opening Hours</h3>
+              <h3 className="text-2xl text-[#FFD700] font-semibold mb-2">
+                Opening Hours
+              </h3>
               <p className="text-[#FFFFFF]">Mon - Fri: 9:00 AM - 6:00 PM</p>
               <p className="text-[#FFFFFF]">Sat: 10:00 AM - 2:00 PM</p>
               <p className="text-[#FFFFFF]">Sun: Closed</p>
@@ -113,7 +122,10 @@ function ContactUs() {
           <div className="max-w-3xl mx-auto">
             <form className="bg-[#780000] p-8 rounded-lg shadow-lg">
               <div className="mb-6">
-                <label className="block text-[#FFFAF0] mb-2 font-semibold" htmlFor="name">
+                <label
+                  className="block text-[#FFFAF0] mb-2 font-semibold"
+                  htmlFor="name"
+                >
                   Name
                 </label>
                 <input
@@ -123,7 +135,10 @@ function ContactUs() {
                 />
               </div>
               <div className="mb-6">
-                <label className="block text-[#FFFAF0] mb-2 font-semibold" htmlFor="email">
+                <label
+                  className="block text-[#FFFAF0] mb-2 font-semibold"
+                  htmlFor="email"
+                >
                   Email
                 </label>
                 <input
@@ -133,7 +148,10 @@ function ContactUs() {
                 />
               </div>
               <div className="mb-6">
-                <label className="block text-[#FFFAF0] mb-2 font-semibold" htmlFor="message">
+                <label
+                  className="block text-[#FFFAF0] mb-2 font-semibold"
+                  htmlFor="message"
+                >
                   Message
                 </label>
                 <textarea

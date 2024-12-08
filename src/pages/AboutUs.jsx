@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import backgroundImage from "../assets/images/group.JPG"; // Background Image
-import teamMember1 from "../assets/images/sathish.JPG";
-import teamMember2 from "../assets/images/jenish.JPG";
-import teamMember3 from "../assets/images/harish.JPG";
-import teamMember4 from "../assets/images/harithampi.JPG";
-import teamMember5 from "../assets/images/harithampi2.JPG";
-import teamMember6 from "../assets/images/gowtham.JPG";
-import teamMember7 from "../assets/images/banu.JPG";
-import teamMember8 from "../assets/images/piranavan.JPG";
-import teamMember9 from "../assets/images/lathu.JPG";
+import backgroundImage from "../assets/images/group.jpg"; // Background Image
+import teamMember1 from "../assets/images/sathish.jpg";
+import teamMember2 from "../assets/images/jenish.jpg";
+import teamMember3 from "../assets/images/harish.jpg";
+import teamMember4 from "../assets/images/harithampi.jpg";
+import teamMember5 from "../assets/images/harithampi2.jpg";
+import teamMember6 from "../assets/images/gowtham.jpg";
+import teamMember7 from "../assets/images/banu.jpg";
+import teamMember8 from "../assets/images/piranavan.jpg";
+import teamMember9 from "../assets/images/lathu.jpg";
 
 function AboutUs() {
   const teamMembers = [

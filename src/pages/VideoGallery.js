@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { notification, Spin, Card } from "antd";
 import { motion } from "framer-motion";
 import axios from "axios";
-import customImage3 from "../assets/images/bc2.png"; // Import the custom image
+import customImage3 from "../assets/images/bc2.jpg"; // Import the custom image
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 

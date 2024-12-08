@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import backgroundImage from "../assets/images/13.png"; // Replace with your image path
+import backgroundImage from "../assets/images/13.jpg"; // Replace with your image path
 
 const ProjectCount = () => {
   const stats = [
@@ -90,7 +90,8 @@ const ProjectCount = () => {
 
                 {/* Counter */}
                 <h3 className="text-3xl font-bold mb-2">
-                  {counts[index]}{stat.target > 100 && "+"}
+                  {counts[index]}
+                  {stat.target > 100 && "+"}
                 </h3>
 
                 {/* Label */}
