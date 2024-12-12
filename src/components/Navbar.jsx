@@ -79,7 +79,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#1A2A40]"
+            className="md:hidden bg-[#290000]"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               <MobileNavLink to="/">Home</MobileNavLink>
