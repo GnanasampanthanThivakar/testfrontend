@@ -80,8 +80,8 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-light text-[#FFFFFF] mb-4">
               Call Us
             </h3>
-            <p className="mb-2 text-[#E0E0E0]">+94 77 99 44 555</p>
-            <p className="text-[#E0E0E0]">+94 77 99 44 555</p>
+            <p className="mb-2 text-[#E0E0E0]">+94 76 00 08 887</p>
+            <p className="text-[#E0E0E0]">+94 76 00 08 887</p>
           </div>
           <div className="text-center md:text-left">
             <h3 className="text-lg md:text-xl font-light text-[#FFFFFF] mb-4">
@@ -94,9 +94,7 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-light text-[#FFFFFF] mb-4">
               Location
             </h3>
-            <p className="mb-4 text-[#E0E0E0]">
-              No 27A, Sajsddddd Road, Vaddukoddai
-            </p>
+            <p className="mb-4 text-[#E0E0E0]">PXP3+632, Vaddukoddai</p>
             <h3 className="text-lg md:text-xl font-light text-[#FFFFFF] mb-4">
               Working Hours
             </h3>
