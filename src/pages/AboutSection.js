@@ -39,7 +39,7 @@ const AboutSection = () => {
 
   return (
     <motion.div
-      className="bg-[#FFFAF0] py-20" // Floral white background
+      className=" bg-[#FEF9F2] py-20" // Floral white background
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}

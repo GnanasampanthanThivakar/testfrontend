@@ -139,7 +139,7 @@ const ProjectCount = () => {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-thin tracking-wide mb-16"
           >
-            We Are <span className="font-bold text-[#8B0000]">Professional</span> 
+            We Are <span className="font-bold text-[#FFD700]">Professional</span> 
             <br />In Our Craft
           </motion.h2>
 

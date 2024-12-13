@@ -33,7 +33,7 @@ function Homealbum() {
 
   return (
     <div className="bg-[#290000] min-h-screen py-20">
-      <h2 className="text-5xl text-center text-[#FFFAF0] mb-12 font-light">
+      <h2 className=" text-center text-[#FFFAF0] mb-12 ">
         Our Lovely Moments <span className="font-semibold text-[#FFD700]">Showcase</span>
       </h2>
       <div className="container mx-auto px-10">
@@ -47,7 +47,7 @@ function Homealbum() {
                   className="w-full h-64 object-cover transition-transform hover:scale-105"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl text-[#FFFAF0] font-semibold mb-2">{album.Name}</h3>
+                  <h2 className=" text-[#FFFAF0] font-semibold mb-2">{album.Name}</h2>
                   <p className="text-[#FFFAF0] mb-4">{album.Album_Category}</p>
                   <Link
                     to={`/album/${album._id}`}

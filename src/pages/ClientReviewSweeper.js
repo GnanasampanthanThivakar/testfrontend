@@ -57,7 +57,7 @@ const Testimonials = () => {
     >
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-thin text-white mb-12 text-center tracking-wider">
-          Words from <span className="font-bold text-[#ffc130]">Our Couples</span>
+          Words from <span className="font-bold text-[#FFD700]">Our Couples</span>
         </h2>
 
         <div className="w-full md:w-3/4 lg:w-2/3 mx-auto">
