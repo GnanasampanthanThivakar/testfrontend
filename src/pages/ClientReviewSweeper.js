@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Carousel, Button, Card, Rate } from "antd"; // Added Rate for star ratings
-import testimonialImage from "../assets/images/o3e.png";
-import backgroundImage1 from "../assets/images/o2e.jpg";
-import backgroundImage2 from "../assets/images/9t.jpg";
-import backgroundImage3 from "../assets/images/o3e.png";
+import React from "react";
+import { Carousel, Card, Rate } from "antd";
+import { QuoteIcon } from "lucide-react";
+import backgroundImage from "../assets/images/05.png"; // Static background
+import testimonialImage from "../assets/images/gl2.jpg";
 
 const Testimonials = () => {
   const testimonials = [
@@ -11,7 +10,7 @@ const Testimonials = () => {
       id: 1,
       name: "Anju & Dananjaya",
       feedback:
-        "We can’t thank Greenart Photography enough for the amazing job they did at our wedding. They were not just photographers; they were storytellers!",
+        "We can't thank Greenart Photography enough for the amazing job they did at our wedding. They were not just photographers; they were storytellers!",
       image: testimonialImage,
       rating: 5,
     },
@@ -49,84 +48,67 @@ const Testimonials = () => {
     },
   ];
 
-  const backgroundImages = [
-    backgroundImage1,
-    backgroundImage2,
-    backgroundImage3,
-  ];
-  const [currentBgIndex, setCurrentBgIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBgIndex((prevIndex) =>
-        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div
-      className="relative flex flex-col items-center justify-center pb-60 pt-60  py-16 px-4 bg-cover bg-center transition-all duration-1000"
+      className="relative flex flex-col   mt-12 md:mt-12    items-center justify-center py-16 px-4 bg-cover bg-center"
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(100, 0, 0, 0.9), rgba(82, 0, 0, 0.7)), url(${backgroundImages[currentBgIndex]})`,
+        backgroundImage: `url(${backgroundImage})`, // Static background
       }}
     >
-      <h2 className="text-3xl md:text-4xl font-light text-white mb-10 text-center">
-        Words From Our <span className="font-semibold">Happy Couples</span>
-      </h2>
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="text-4xl md:text-5xl font-thin text-white mb-12 text-center tracking-wider">
+          Words from <span className="font-bold text-[#ffc130]">Our Couples</span>
+        </h2>
 
-      <div className="w-full md:w-2/3 lg:w-1/2">
-        <Carousel autoplay>
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id}>
-              <Card
-                className="shadow-lg"
-                style={{
-                  borderRadius: "8px",
-                  background: "#fff",
-                  padding: "20px",
-                }}
-              >
-                <div className="flex flex-col items-center">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-20 h-20 object-cover rounded-full border-4 border-[#D32F2F] shadow-md mb-4"
-                  />
-                  <p className="text-center text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed mb-2">
-                    {testimonial.feedback}
-                  </p>
-                  <Rate
-                    allowHalf
-                    disabled
-                    defaultValue={testimonial.rating}
-                    style={{ color: "#D32F2F" }}
-                    className="mb-2"
-                  />
-                  <h3 className="text-lg font-semibold text-[#1A2A40]">
-                    {testimonial.name}
-                  </h3>
-                </div>
-              </Card>
-            </div>
-          ))}
-        </Carousel>
+        <div className="w-full md:w-3/4 lg:w-2/3 mx-auto">
+          <Carousel
+            dots={true}
+            dotsClass="custom-dots"
+            effect="fade"
+            autoplay={true}
+            autoplaySpeed={5000}
+          >
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="px-4">
+                <Card
+                  className="shadow-xl border-none transition-transform duration-300 transform hover:scale-105"
+                  style={{
+                    borderRadius: "16px",
+                    padding: "30px",
+                    background: "rgba(255, 255, 255, 0.9)",
+                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  <div className="flex flex-col items-center text-center relative">
+                    <QuoteIcon
+                      className="absolute top-0 left-0 text-[#D32F2F] opacity-20"
+                      size={64}
+                    />
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-24 h-24 object-cover rounded-full border-4 border-[#D32F2F] shadow-lg mb-6 z-10"
+                    />
+                    <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4 italic relative z-10">
+                      "{testimonial.feedback}"
+                    </p>
+                    <Rate
+                      allowHalf
+                      disabled
+                      defaultValue={testimonial.rating}
+                      style={{ color: "#D32F2F", fontSize: "20px" }}
+                      className="mb-4"
+                    />
+                    <h3 className="text-xl font-semibold text-[#1A2A40] tracking-wider">
+                      {testimonial.name}
+                    </h3>
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </Carousel>
+        </div>
       </div>
-
-      <Button
-        type="primary"
-        size="large"
-        className="mt-10 px-8 py-3"
-        style={{
-          backgroundColor: "#1A2A40",
-          borderColor: "#1A2A40",
-          color: "#fff",
-        }}
-        onClick={() => alert("More stories coming soon!")}
-      >
-        More Stories Shared
-      </Button>
     </div>
   );
 };

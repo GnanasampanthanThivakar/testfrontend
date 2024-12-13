@@ -69,8 +69,8 @@ const Hero = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-white">
+        {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
+        {/* <div className="absolute inset-0 flex items-center justify-center text-white">
           <div className="text-center px-4 sm:px-6 lg:px-8">
             <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">
               <span className="text-[#FF8A80]">SJ</span>{" "}
@@ -80,7 +80,7 @@ const Hero = () => {
               Capturing the magic of your love story
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Rest of the content below the hero */}

@@ -57,7 +57,8 @@ function Gallery() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Our Portfolio
+            <h1>Our Portfolio</h1>
+            
           </motion.h1>
           <motion.div
             className="w-24 h-1 bg-[#FFD700]"
@@ -70,7 +71,7 @@ function Gallery() {
 
       {/* Main Content */}
       <main className="container mx-auto px-16 py-24 mb-60">
-        <h2 className="text-6xl font-light text-center mb-20 text-[#FFFFFF]">
+        <h2 className=" font-light text-center mb-20 text-[#FFFFFF]">
           Album <span className="text-[#D32F2F] font-semibold">Gallery</span>
         </h2>
 

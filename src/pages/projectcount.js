@@ -1,29 +1,59 @@
 import React, { useEffect, useState, useRef } from "react";
-import backgroundImage from "../assets/images/13.jpg"; // Replace with your image path
+import { motion } from "framer-motion";
+import { 
+  Users, 
+  Camera, 
+  Briefcase, 
+  Image 
+} from "lucide-react";
+import backgroundImage from "../assets/images/13.jpg";
 
 const ProjectCount = () => {
   const stats = [
-    { id: 1, icon: "👍", target: 200, label: "Satisfied Customers" },
-    { id: 2, icon: "🎥", target: 160, label: "Studio Sessions" },
-    { id: 3, icon: "👨‍💼", target: 10, label: "Years of Experience" },
-    { id: 4, icon: "📸", target: 200, label: "Photoshoots Completed" },
+    { 
+      id: 1, 
+      icon: Users, 
+      target: 200, 
+      label: "Satisfied Customers",
+      color: "#8B0000"
+    },
+    { 
+      id: 2, 
+      icon: Camera, 
+      target: 160, 
+      label: "Studio Sessions",
+      color: "#B22222"
+    },
+    { 
+      id: 3, 
+      icon: Briefcase, 
+      target: 10, 
+      label: "Years of Experience",
+      color: "#DC143C"
+    },
+    { 
+      id: 4, 
+      icon: Image, 
+      target: 200, 
+      label: "Photoshoots Completed",
+      color: "#A52A2A"
+    },
   ];
 
   const [counts, setCounts] = useState(
-    stats.map(() => 0) // Initialize all counters to 0
+    stats.map(() => 0)
   );
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    // IntersectionObserver to detect visibility
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -40,66 +70,115 @@ const ProjectCount = () => {
   useEffect(() => {
     if (!isVisible) return;
 
-    // Start counter animation when visible
     const intervals = stats.map((stat, index) => {
-      const step = Math.ceil(stat.target / 100); // Smooth increment step
+      const step = Math.ceil(stat.target / 100);
       const interval = setInterval(() => {
         setCounts((prev) => {
           const newCounts = [...prev];
           if (newCounts[index] < stat.target) {
             newCounts[index] += step;
-            if (newCounts[index] > stat.target) newCounts[index] = stat.target; // Stop at target
+            if (newCounts[index] > stat.target) newCounts[index] = stat.target;
           }
           return newCounts;
         });
-      }, 30); // Speed of the increment
+      }, 30);
       return interval;
     });
 
     return () => {
-      intervals.forEach(clearInterval); // Clear intervals when component unmounts or animation ends
+      intervals.forEach(clearInterval);
     };
   }, [isVisible, stats]);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
   return (
     <div
-      className="relative h-screen bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-      ref={sectionRef} // Attach the section to the ref
+      className="relative min-h-screen bg-fixed bg-cover bg-center flex items-center justify-center"
+      style={{ 
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundAttachment: "fixed"
+      }}
+      ref={sectionRef}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="text-center text-white space-y-12">
+      <div className="absolute inset-0 bg-black bg-opacity-60 "></div>
+
+      <div className="relative z-10 container mx-auto px-4 py-16">
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="text-center text-white space-y-12"
+        >
           {/* Title */}
-          <h2 className="text-4xl font-bold md:text-5xl">
-            We Are Professional In Our Works.
-            <br /> Hire Us!!
-          </h2>
+          <motion.h2 
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-thin tracking-wide mb-16"
+          >
+            We Are <span className="font-bold text-[#8B0000]">Professional</span> 
+            <br />In Our Craft
+          </motion.h2>
 
           {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <motion.div 
+            variants={containerVariants}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
             {stats.map((stat, index) => (
-              <div
+              <motion.div
                 key={stat.id}
-                className="flex flex-col items-center justify-center bg-opacity-80 bg-dark rounded-lg p-6 bg-gray-800 hover:bg-gray-700 transition duration-300"
+                variants={itemVariants}
+                className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 {/* Icon */}
-                <div className="text-4xl mb-4" style={{ color: "#8B0000" }}>
-                  {stat.icon}
+                <div 
+                  className="mb-4 flex items-center justify-center"
+                  style={{ color: stat.color }}
+                >
+                  <stat.icon size={48} strokeWidth={1.5} />
                 </div>
 
                 {/* Counter */}
-                <h3 className="text-3xl font-bold mb-2">
+                <h3 
+                  className="text-4xl font-bold mb-2 text-white"
+                  style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
+                >
                   {counts[index]}
                   {stat.target > 100 && "+"}
                 </h3>
 
                 {/* Label */}
-                <p className="text-gray-300">{stat.label}</p>
-              </div>
+                <p className="text-gray-300 uppercase tracking-wider text-sm">
+                  {stat.label}
+                </p>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

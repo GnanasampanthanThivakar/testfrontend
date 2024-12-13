@@ -4,15 +4,15 @@ import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import backgroundImage from "../assets/images/group.jpg"; // Background Image
-import teamMember1 from "../assets/images/sathish.jpg";
-import teamMember2 from "../assets/images/jenish.jpg";
-import teamMember3 from "../assets/images/harish.jpg";
-import teamMember4 from "../assets/images/harithampi.jpg";
-import teamMember5 from "../assets/images/harithampi2.jpg";
-import teamMember6 from "../assets/images/gowtham.jpg";
-import teamMember7 from "../assets/images/banu.jpg";
-import teamMember8 from "../assets/images/piranavan.jpg";
-import teamMember9 from "../assets/images/lathu.jpg";
+import teamMember1 from "../assets/images/sathish.png";
+import teamMember2 from "../assets/images/jenish.png";
+import teamMember3 from "../assets/images/harish.png";
+import teamMember4 from "../assets/images/harithampi.png";
+import teamMember5 from "../assets/images/harithampi2.png";
+import teamMember6 from "../assets/images/gowtham.png";
+import teamMember7 from "../assets/images/banu.png";
+import teamMember8 from "../assets/images/piranavan.png";
+import teamMember9 from "../assets/images/lathu.png";
 
 function AboutUs() {
   const teamMembers = [
@@ -58,13 +58,14 @@ function AboutUs() {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          >
+          ><h1>
             About Us
+            </h1>
           </motion.h1>
           <motion.div
-            className="w-20 sm:w-24 md:w-32 h-1 bg-[#FFD700]"
+            className="w- sm:w-24 md:w-32 h-1 bg-[#FFD700]"
             initial={{ width: 0 }}
-            animate={{ width: "80%" }}
+            animate={{ width: "10%" }}
             transition={{ duration: 0.8, delay: 0.4 }}
           ></motion.div>
         </div>
@@ -77,19 +78,20 @@ function AboutUs() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          >
-            Our <span className="text-[#FFD700] font-semibold">Story</span>
+          ><h2> Our <span className="text-[#FFD700] font-semibold">Story</span></h2>
+           
           </motion.h2>
           <motion.p
             className="text-lg sm:text-xl text-[#FFFFFF] text-center max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          ><p>
             Founded in 2010, our photography studio has been capturing life's
             most precious moments for over a decade. We believe in the power of
             images to tell stories, evoke emotions, and preserve memories for
             generations to come.
+            </p>
           </motion.p>
         </section>
 
@@ -133,19 +135,21 @@ function AboutUs() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          >
+          > <h2>
             Our <span className="text-[#FFD700] font-semibold">Mission</span>
+            </h2>
           </motion.h2>
           <motion.p
             className="text-lg sm:text-xl text-[#FFFFFF] text-center max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          > <p>
             Our mission is to create stunning visual narratives that capture the
             essence of every moment. We strive to push the boundaries of
             creativity while delivering exceptional quality and unparalleled
             customer service.
+            </p>
           </motion.p>
         </section>
       </main>

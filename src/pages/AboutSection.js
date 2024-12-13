@@ -56,7 +56,7 @@ const AboutSection = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-[#E6E6FA] rounded-xl shadow-lg p-8 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl" // Lavender background
+              className="bg-[#dedcdc] rounded-xl shadow-lg p-8 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl" // Lavender background
               variants={itemVariants}
             >
               <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-full bg-[#FFFAF0]"> {/* Floral white background */}

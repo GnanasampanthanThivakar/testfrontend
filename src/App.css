@@ -1,12 +1,56 @@
 .App {
   text-align: center;
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400&display=swap");
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Desktop */
+body {
+  font-family: "Playfair Display", serif;
+}
+h1 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 32px;
+  line-height: 1.4;
+}
+p {
+  font-family: "serif"; /* Adding serif font for paragraphs */
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  p {
+    font-family:  "serif"; /* Serif font maintained for mobile */
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
