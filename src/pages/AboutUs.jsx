@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import backgroundImage from "../assets/images/group.jpg"; // Background Image
+// import backgroundImage from "../assets/images/group.jpg"; // Background Image
 import teamMember1 from "../assets/images/sathish.png";
 import teamMember2 from "../assets/images/jenish.png";
 import teamMember3 from "../assets/images/harish.png";
@@ -44,7 +44,7 @@ function AboutUs() {
       <header
         className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[600px] bg-cover bg-center"
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          // backgroundImage: `url(${backgroundImage})`,
           backgroundAttachment: "fixed", // Parallax effect
           backgroundPosition: "center center",
           backgroundSize: "cover",
