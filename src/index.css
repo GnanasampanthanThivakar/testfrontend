@@ -15,3 +15,24 @@
   animation: fade-in 0.5s ease-out;
 }
 
+.heading {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.my-masonry-grid {
+  display: flex;
+  margin-left: -30px; /* adjust according to your gap size */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 30px; /* adjust according to your gap size */
+  background-clip: padding-box;
+}
+
+/* Optional: Add space between items */
+.my-masonry-grid_column > div {
+  margin-bottom: 30px;
+}

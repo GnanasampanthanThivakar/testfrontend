@@ -105,7 +105,7 @@ const Footer = () => {
           <p className="mb-2 text-[#E0E0E0]">
             &copy; 2024 SJ Photography (PVT) Limited. All Rights Reserved.
           </p>
-          <p className="text-[#E0E0E0]">Website By Webify</p>
+          <p className="text-[#E0E0E0]">Website By Syntax9</p>
         </div>
       </div>
     </footer>

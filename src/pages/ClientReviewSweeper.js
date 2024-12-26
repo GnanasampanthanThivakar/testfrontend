@@ -50,14 +50,14 @@ const Testimonials = () => {
 
   return (
     <div
-      className="relative flex flex-col   mt-12 md:mt-12    items-center justify-center py-16 px-4 bg-cover bg-center"
+      className="relative flex flex-col    mt-12 md:mt-12  sm:mt-36 items-center justify-center py-16 px-4 bg-cover bg-center"
       style={{
         backgroundImage: `url(${backgroundImage})`, // Static background
       }}
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-thin text-white mb-12 text-center tracking-wider">
-          Words from <span className="font-bold text-[#FFD700]">Our Couples</span>
+        <h2 className=" text-white mb-12 text-center tracking-wider">
+          Words from <span className=" text-[#FFD700]">Our Couples</span>
         </h2>
 
         <div className="w-full md:w-3/4 lg:w-2/3 mx-auto">

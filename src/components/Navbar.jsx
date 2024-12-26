@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/images/logo.png"; // Ensure this path is correct
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,17 +30,27 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-6">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/gallery">Gallery</NavLink>
-            <NavLink to="/video">Services</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+          <div className="hidden md:flex items-center space-x-6 heading">
+            <NavLink to="/" isActive={location.pathname === "/"}>
+              Home
+            </NavLink>
+            <NavLink to="/about" isActive={location.pathname === "/about"}>
+              About
+            </NavLink>
+            <NavLink to="/gallery" isActive={location.pathname === "/gallery"}>
+              Gallery
+            </NavLink>
+            <NavLink to="/video" isActive={location.pathname === "/video"}>
+              Services
+            </NavLink>
+            <NavLink to="/contact" isActive={location.pathname === "/contact"}>
+              Contact
+            </NavLink>
             <a
               href="https://wa.me/94764481734"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2 bg-[#780000] text-[#FFFAF0] rounded-full font-medium hover:bg-[#FF0000] hover:text-[#1A2A40] transition duration-300"
+              className="px-6 py-1 bg-[#780000] text-[#FFFAF0] font-medium hover:bg-[#950000] hover:text-[#FFFAF0] transition duration-300"
             >
               Book Now
             </a>
@@ -81,12 +92,34 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-[#290000]"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <MobileNavLink to="/">Home</MobileNavLink>
-              <MobileNavLink to="/about">About</MobileNavLink>
-              <MobileNavLink to="/gallery">Gallery</MobileNavLink>
-              <MobileNavLink to="/video">Services</MobileNavLink>
-              <MobileNavLink to="/contact">Contact</MobileNavLink>
+            <div className="px-2 pt-2 pb-3 space-y-1 heading">
+              <MobileNavLink to="/" isActive={location.pathname === "/"}>
+                Home
+              </MobileNavLink>
+              <MobileNavLink
+                to="/about"
+                isActive={location.pathname === "/about"}
+              >
+                About
+              </MobileNavLink>
+              <MobileNavLink
+                to="/gallery"
+                isActive={location.pathname === "/gallery"}
+              >
+                Gallery
+              </MobileNavLink>
+              <MobileNavLink
+                to="/video"
+                isActive={location.pathname === "/video"}
+              >
+                Services
+              </MobileNavLink>
+              <MobileNavLink
+                to="/contact"
+                isActive={location.pathname === "/contact"}
+              >
+                Contact
+              </MobileNavLink>
               <a
                 href="https://wa.me/94764481734"
                 target="_blank"
@@ -103,23 +136,31 @@ export default function Navbar() {
   );
 }
 
-function NavLink({ to, children }) {
+function NavLink({ to, children, isActive }) {
   return (
     <Link
       to={to}
-      className="text-[#FFFAF0] hover:text-[#FFD700] px-3 py-2 rounded-md text-sm font-medium transition duration-300 relative group"
+      className={`text-[#FFFAF0] px-3 py-2 rounded-md text-sm font-medium transition duration-300 relative group ${
+        isActive ? "text-[#FFD700]" : "hover:text-[#FFD700]"
+      }`}
     >
       {children}
-      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FFD700] transition-all duration-300 group-hover:w-full"></span>
+      {isActive && (
+        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FFD700]"></span>
+      )}
     </Link>
   );
 }
 
-function MobileNavLink({ to, children }) {
+function MobileNavLink({ to, children, isActive }) {
   return (
     <Link
       to={to}
-      className="block px-3 py-2 rounded-md text-base font-medium text-[#FFFAF0] hover:text-[#FFD700] hover:bg-[#290000] transition duration-300"
+      className={`block px-3 py-2 rounded-md text-base font-medium transition duration-300 ${
+        isActive
+          ? "text-[#FFD700] bg-[#290000]"
+          : "text-[#FFFAF0] hover:text-[#FFD700] hover:bg-[#290000]"
+      }`}
     >
       {children}
     </Link>

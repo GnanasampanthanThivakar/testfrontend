@@ -11,19 +11,23 @@ const GallerySection2 = () => {
       {/* Mobile Layout */}
       <div className="flex flex-col items-center lg:hidden px-4 py-8 bg-[#FEF9F2]">
         {/* Left Text Section */}
-        <div className="text-center mb-8 ">
-          <h1 className="heading text-2xl font-light text-[#0a0505] mb-4">PROFESSIONAL</h1>
-          <p className="text-lg font-light text-[#000000] mb-4">Wedding Photographers And Videographers</p>
-          <p className="text-base text-black mb-6">
-            Harvest Creative Media is a professional wedding photography and videography company that specializes in producing and editing videos for various occasions.
+        <div className="text-center mb-8">
+          <h1 className="heading text-2xl sm:text-3xl md:text-4xl font-light text-[#0a0505] mb-4">
+            PROFESSIONAL
+          </h1>
+          <p className="text-lg sm:text-xl font-light text-[#000000] mb-4">
+            Wedding Photographers And Videographers
           </p>
+          <h1 className="text-base sm:text-lg text-black mb-6">
+            Harvest Creative Media is a professional wedding photography and videography company that specializes in producing and editing videos for various occasions.
+          </h1>
           <button className="bg-[#780000] hover:bg-[#FF0000] text-white font-medium px-4 py-2 text-sm rounded-md w-40">
             Read More
           </button>
         </div>
 
         {/* Right Image Section with Foreground Images */}
-        <div className="relative  w-full">
+        <div className="relative w-full">
           {/* Background Image */}
           <img
             src={customImage}
@@ -32,7 +36,7 @@ const GallerySection2 = () => {
           />
 
           {/* Foreground Images */}
-          <div className="absolute top-80 p-10  flex gap-2">
+          <div className="absolute top-80 p-10 flex gap-2">
             <img
               src={customImage1}
               alt="Foreground Image 1"
@@ -53,12 +57,16 @@ const GallerySection2 = () => {
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:flex flex-row items-start gap-10 px-0 py-12 bg-[#FEF9F2] relative mb-20">
+      <div className="hidden lg:flex flex-row items-start gap-10 px-0 pb-60 py-12 bg-[#FEF9F2] relative">
         {/* Left Text Section */}
         <div className="lg:w-1/2 flex flex-col text-left px-28 mt-24">
-          <h1 className="heading text-4xl font-light text-left text-[#0a0505] mb-4">PROFESSIONAL</h1>
-          <p className="text-lg font-light text-left text-[#000000] mb-4">Wedding Photographers And Videographers</p>
-          <p className="text-base text-left text-black mb-6">
+          <h1 className=" text-left text-[#780000] mb-4 text-3xl sm:text-4xl ">
+            PROFESSIONAL
+          </h1>
+          <h2 className="text-left text-[#000000] mb-4 text-xl sm:text-2xl">
+            Wedding Photographers And Videographers
+          </h2>
+          <p className="text-left text-black mb-6 text-base sm:text-lg md:text-xl">
             Harvest Creative Media is a professional wedding photography and videography company that specializes in producing and editing videos for various occasions.
           </p>
           <button className="bg-[#780000] hover:bg-[#FF0000] text-white font-medium px-4 py-2 text-sm rounded-md w-40">
@@ -80,17 +88,20 @@ const GallerySection2 = () => {
             <img
               src={customImage1}
               alt="Foreground Image 1"
-              className="w-[400px] h-[300px] object-cover shadow-lg shadow-md border-2 border-white"
+              className="w-[300px] h-[300px] object-cover shadow-lg shadow-md border-2 border-white"
+              style={{ maxWidth: "unset" }}
             />
             <img
               src={customImage2}
               alt="Foreground Image 2"
-              className="w-[400px] h-[300px] object-cover shadow-lg shadow-md border-2 border-white"
+              className="w-[300px] h-[300px] object-cover shadow-lg shadow-md border-2 border-white"
+              style={{ maxWidth: "unset" }}
             />
             <img
               src={customImage3}
               alt="Foreground Image 3"
-              className="w-[400px] h-[300px] object-cover shadow-lg shadow-md border-2 border-white"
+              className="w-[300px] h-[300px] object-cover shadow-lg shadow-md border-2 border-white"
+              style={{ maxWidth: "unset" }}
             />
           </div>
         </div>

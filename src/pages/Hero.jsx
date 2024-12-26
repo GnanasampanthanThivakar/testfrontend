@@ -20,7 +20,6 @@ import GallerySection1 from "./GallerySection1";
 import GallerySection2 from "./GallerySection2";
 import Projectcount from "./projectcount";
 import Homealbum from "./Homealbum";
-import VideoList from "./VideoGallery";
 
 const Hero = () => {
   const heroImages = [
@@ -42,7 +41,7 @@ const Hero = () => {
   return (
     <div className="relative overflow-hidden">
       <Navbar />
-      <div className="relative" style={{ width: "100%", height: "700px" }}>
+      <div className="relative w-full h-screen">
         <Swiper
           modules={[EffectFade, Pagination, Autoplay]}
           effect="fade"
@@ -55,32 +54,18 @@ const Hero = () => {
           className="h-full"
           speed={1000}
           fadeEffect={{ crossFade: true }}
-          watchSlidesProgress={true}
         >
           {heroImages.map((image, index) => (
             <SwiperSlide key={index}>
               <img
                 src={image}
                 alt={`Hero Background ${index + 1}`}
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
-                onLoad={(e) => e.target.classList.remove("opacity-0")}
+                className="w-full h-screen object-cover"
                 onError={(e) => console.error(`Failed to load image: ${image}`)}
               />
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
-        {/* <div className="absolute inset-0 flex items-center justify-center text-white">
-          <div className="text-center px-4 sm:px-6 lg:px-8">
-            <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">
-              <span className="text-[#FF8A80]">SJ</span>{" "}
-              <span className="text-[#D7CCC8]">Photography</span>
-            </h1>
-            <p className="font-roboto text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8">
-              Capturing the magic of your love story
-            </p>
-          </div>
-        </div> */}
       </div>
 
       {/* Rest of the content below the hero */}
@@ -89,9 +74,7 @@ const Hero = () => {
       <GallerySection2 />
       <ClientReviewSweeper />
       <Projectcount />
-
       <Homealbum />
-
       <Footer />
     </div>
   );

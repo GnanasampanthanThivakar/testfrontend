@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-// import backgroundImage from "../assets/images/group.jpg"; // Background Image
-import teamMember1 from "../assets/images/sathish.png";
-import teamMember2 from "../assets/images/jenish.png";
-import teamMember3 from "../assets/images/harish.png";
-import teamMember4 from "../assets/images/harithampi.png";
-import teamMember5 from "../assets/images/harithampi2.png";
-import teamMember6 from "../assets/images/gowtham.png";
-import teamMember7 from "../assets/images/banu.png";
-import teamMember8 from "../assets/images/piranavan.png";
-import teamMember9 from "../assets/images/lathu.png";
+import backgroundImage from "../assets/images/group.jpg"; // Background Image
+import teamMember1 from "../assets/images/sathish.jpg";
+import teamMember2 from "../assets/images/jenish.jpg";
+import teamMember3 from "../assets/images/harish.jpg";
+import teamMember4 from "../assets/images/harithampi.jpg";
+import teamMember5 from "../assets/images/harithampi2.jpg";
+import teamMember6 from "../assets/images/gowtham.jpg";
+import teamMember7 from "../assets/images/banu.jpg";
+import teamMember8 from "../assets/images/piranavan.jpg";
+import teamMember9 from "../assets/images/lathu.jpg";
 
 function AboutUs() {
   const teamMembers = [
@@ -44,7 +44,7 @@ function AboutUs() {
       <header
         className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[600px] bg-cover bg-center"
         style={{
-          // backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url(${backgroundImage})`,
           backgroundAttachment: "fixed", // Parallax effect
           backgroundPosition: "center center",
           backgroundSize: "cover",
@@ -117,6 +117,7 @@ function AboutUs() {
                   src={member.image}
                   alt={`Photo of ${member.name}`}
                   className="w-full h-56 sm:h-64 md:h-80 lg:h-96 object-cover"
+                  loading="lazy"
                 />
                 <div className="p-4 sm:p-6 lg:p-8">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-[#FFFFFF]">

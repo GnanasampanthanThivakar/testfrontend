@@ -17,7 +17,6 @@ function Gallery() {
       .get("http://localhost:8070/photographyweb/getdetails")
       .then((response) => {
         setAlbums(response.data);
-        // Extract unique categories
         const uniqueCategories = [
           ...new Set(response.data.map((album) => album.Album_Category)),
         ];
@@ -45,7 +44,7 @@ function Gallery() {
         className="relative h-[800px] bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundAttachment: "fixed", // Enable the parallax effect
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#290000] to-transparent opacity-90"></div>
@@ -56,9 +55,9 @@ function Gallery() {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          >
-            <h1>Our Portfolio</h1>
-            
+          ><h1>
+            Our Portfolio
+            </h1>
           </motion.h1>
           <motion.div
             className="w-24 h-1 bg-[#FFD700]"
@@ -71,7 +70,7 @@ function Gallery() {
 
       {/* Main Content */}
       <main className="container mx-auto px-16 py-24 mb-60">
-        <h2 className=" font-light text-center mb-20 text-[#FFFFFF]">
+        <h2 className="font-light text-center mb-20 text-[#FFFFFF]">
           Album <span className="text-[#D32F2F] font-semibold">Gallery</span>
         </h2>
 
@@ -103,26 +102,34 @@ function Gallery() {
           {filteredAlbums.map((album, index) => (
             <motion.div
               key={album._id}
-              className="bg-[#520000]  overflow-hidden shadow-md hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-[#520000] overflow-hidden shadow-md hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {album.images && album.images.length > 0 && (
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-80 overflow-hidden group">
+                  {/* Grayscale Image */}
                   <img
                     src={`http://localhost:8070/uploads/${album.images[0].filename}`}
                     alt={album.images[0].filename}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-300 group-hover:opacity-0"
+                    style={{ filter: "grayscale(100%)" }} // Grayscale filter
                   />
-                  <div className="absolute inset-0 "></div>
+                  {/* Original Color Image */}
+                  <img
+                    src={`http://localhost:8070/uploads/${album.images[0].filename}`}
+                    alt={album.images[0].filename}
+                    className="w-full h-full object-cover transition-all duration-300 group-hover:opacity-100 absolute top-0 left-0 opacity-0"
+                  />
+                  <div className="absolute inset-0"></div>
                 </div>
               )}
               <div className="p-8">
                 <h3 className="text-2xl font-semibold mb-3 text-[#FFFFFF]">
-                  {album.Album_Category}
+                  {album.Name}
                 </h3>
-                <p className="text-[#FFFFFF] mb-6">{album.Name}</p>
+                <p className="text-[#FFFFFF] mb-6">{album.Album_Category}</p>
                 <Link
                   to={`/album/${album._id}`}
                   className="inline-block text-[#D32F2F] font-semibold hover:text-[#FF0000] transition-all duration-300 transform hover:scale-105"
