@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import backgroundImage from "../assets/images/group.jpg"; // Background Image
+// import backgroundImage from "../assets/images/group.jpg"; // Background Image
 import teamMember1 from "../assets/images/sathish.jpg";
 import teamMember2 from "../assets/images/jenish.jpg";
 import teamMember3 from "../assets/images/harish.jpg";
