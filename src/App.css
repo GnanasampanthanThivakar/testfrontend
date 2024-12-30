@@ -21,18 +21,18 @@ body {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 50px;
   line-height: 1.2;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 45px;
   line-height: 1.4;
 }
 
 p {
   font-family: "serif"; /* Serif font for paragraphs */
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
 }
 

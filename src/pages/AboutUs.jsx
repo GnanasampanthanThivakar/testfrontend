@@ -102,7 +102,8 @@ function AboutUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Our <span className="text-[#FFD700] font-semibold">Team</span>
+            <h2>
+            Our <span className="text-[#FFD700] font-semibold">Team</span></h2>
           </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 sm:gap-12 md:gap-16">
             {teamMembers.map((member, index) => (

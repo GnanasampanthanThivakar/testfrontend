@@ -58,7 +58,9 @@ function Homealbum() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Our Lovely Moments <span className="font-semibold text-[#FFD700]">Showcase</span>
+        <h2 className='font-light'>
+        Our Lovely Moments <span className="text-[#FFD700]">Showcase</span>
+        </h2>
       </motion.h2>
       <div className="container mx-auto px-10">
         <Slider {...settings}>

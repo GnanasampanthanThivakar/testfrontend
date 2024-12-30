@@ -52,7 +52,7 @@ function AlbumPhotos() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#290000] to-transparent opacity-90"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <motion.h1
-            className="text-5xl font-light text-[#FFFAF0] tracking-wider mb-4"
+            className="text-5xl font-light text-[#FFFAF0]  tracking-wider mb-4"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -81,7 +81,7 @@ function AlbumPhotos() {
         <p
           style={{
             color: "#757575",
-            fontSize: "16px",
+            
             marginBottom: "20px",
             textAlign: "center",
           }}
