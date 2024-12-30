@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import backgroundImage from "../assets/images/sathish.jpg"; // Background Image
 import teamMember1 from "../assets/images/sathish.jpg";
 import teamMember2 from "../assets/images/jenish.jpg";
+import teamMember3 from "../assets/images/jenish.jpg";
 import teamMember4 from "../assets/images/harithampi.jpg";
 import teamMember5 from "../assets/images/harithampi2.jpg";
 import teamMember6 from "../assets/images/jenish.jpg";
