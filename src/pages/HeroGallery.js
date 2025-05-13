@@ -1,29 +1,33 @@
-import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
-import Card from './Card';
+import React, { useEffect, useState, useRef } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import Card from "./Card";
 
 function HeroGallery() {
   const [albums, setAlbums] = useState([]);
   const carouselRef = useRef(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8070/photographyweb/getdetails')
+    axios
+      .get("http://localhost:8070/photographyweb/getdetails")
       .then((response) => {
         setAlbums(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching albums:', error);
+        console.error("Error fetching albums:", error);
       });
   }, []);
 
   const scroll = (direction) => {
     if (carouselRef.current) {
       const { scrollLeft, clientWidth } = carouselRef.current;
-      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
-      carouselRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+      const scrollTo =
+        direction === "left"
+          ? scrollLeft - clientWidth
+          : scrollLeft + clientWidth;
+      carouselRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
     }
   };
 
@@ -43,16 +47,16 @@ function HeroGallery() {
             Explore our collection of stunning wedding moments.
           </p>
         </motion.div>
-        
+
         <div className="relative">
           <button
-            onClick={() => scroll('left')}
+            onClick={() => scroll("left")}
             className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-all duration-200"
           >
             <ChevronLeftIcon className="w-6 h-6" />
           </button>
           <button
-            onClick={() => scroll('right')}
+            onClick={() => scroll("right")}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-all duration-200"
           >
             <ChevronRightIcon className="w-6 h-6" />

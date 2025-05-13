@@ -50,7 +50,7 @@ const Testimonials = () => {
 
   return (
     <div
-      className="relative flex flex-col       items-center justify-center py-16 px-4 bg-cover bg-center"
+      className="relative flex flex-col  bg-black bg-opacity-15     items-center justify-center py-16 px-4 bg-cover bg-center"
       style={{
         backgroundImage: `url(${backgroundImage})`, // Static background
       }}

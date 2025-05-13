@@ -45,10 +45,10 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-20 relative">
-          <h1 className="  font-light text-white mb-6">
+          <h2 className="  font-light text-white mb-6">
             <span className="inline-block border-b-2 border-[#780000] pb-2">Exceptional</span>
             <span className="block mt-2">Photography Services</span>
-          </h1>
+          </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto italic">
             Where artistry meets moments, creating timeless memories
           </p>

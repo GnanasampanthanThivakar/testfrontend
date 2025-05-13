@@ -58,9 +58,7 @@ const VideoGallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1>
-            Welcome to Our Video Gallery
-            </h1>
+            <h1>Video Gallery</h1>
           </motion.h1>
           <motion.div
             className="w-16 md:w-24 h-1 bg-[#FFD700]"

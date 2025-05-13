@@ -69,7 +69,7 @@ const GallerySection2 = () => {
           <p className="text-left text-white mb-6 text-base sm:text-lg md:text-xl">
             Harvest Creative Media is a professional wedding photography and videography company that specializes in producing and editing videos for various occasions.
           </p>
-          <button className="bg-[#780000] hover:bg-[#FF0000] text-white font-medium px-4 py-2 text-sm rounded-md w-40">
+          <button className="bg-[#780000] hover:bg-[#950000] text-white font-medium px-4 py-2 text-sm rounded-md w-40">
             Read More
           </button>
         </div>

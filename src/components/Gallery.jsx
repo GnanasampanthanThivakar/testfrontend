@@ -39,7 +39,7 @@ function Gallery() {
 
   return (
     <div className="min-h-screen bg-[#290000]">
-      {/* Header with Parallax Effect */}
+      {/* Header section remains the same */}
       <header
         className="relative h-[800px] bg-cover bg-center"
         style={{
@@ -55,9 +55,8 @@ function Gallery() {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          ><h1>
-            Our Portfolio
-            </h1>
+          >
+            <h1>Our Portfolio</h1>
           </motion.h1>
           <motion.div
             className="w-24 h-1 bg-[#FFD700]"
@@ -69,24 +68,24 @@ function Gallery() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-16 py-24 mb-60">
-        <h2 className="font-light text-center mb-20 text-[#FFFFFF]">
-          Album <span className="text-[#D32F2F] font-semibold">Gallery</span>
+      <main className="container mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-16 lg:py-24 mb-32 sm:mb-40 lg:mb-60">
+        <h2 className="font-light text-center mb-12 sm:mb-16 lg:mb-20 text-[#FFFFFF] text-3xl sm:text-4xl lg:text-5xl">
+          Album <span className="text-[#FFD700]">Gallery</span>
         </h2>
 
-        {/* Search and Filter Section */}
-        <div className="mb-8 flex flex-col md:flex-row justify-between items-center">
+        {/* Updated Search and Filter Section */}
+        <div className="mb-8 space-y-4 sm:space-y-0 sm:flex sm:flex-row sm:justify-between sm:items-center">
           <input
             type="text"
             placeholder="Search albums..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full md:w-1/2 p-2 border border-gray-300 rounded mb-4 md:mb-0"
+            className="w-full sm:w-1/2 p-3 rounded-lg bg-[#3a0000] border border-[#520000] text-[#FFFFFF] placeholder-[#8B0000] focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:border-transparent transition-all duration-300"
           />
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full md:w-1/4 p-2 border border-gray-300 rounded"
+            className="w-full sm:w-1/3 p-3 rounded-lg bg-[#3a0000] border border-[#520000] text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:border-transparent transition-all duration-300"
           >
             <option value="">All Categories</option>
             {categories.map((category, index) => (
@@ -97,44 +96,38 @@ function Gallery() {
           </select>
         </div>
 
-        {/* Album Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* Updated Album Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {filteredAlbums.map((album, index) => (
             <motion.div
               key={album._id}
-              className="bg-[#520000] overflow-hidden shadow-md hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-[#520000] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {album.images && album.images.length > 0 && (
-                <div className="relative h-80 overflow-hidden group">
-                  {/* Grayscale Image */}
+                <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden group">
                   <img
                     src={`http://localhost:8070/uploads/${album.images[0].filename}`}
                     alt={album.images[0].filename}
-                    className="w-full h-full object-cover transition-all duration-300 group-hover:opacity-0"
-                    style={{ filter: "grayscale(100%)" }} // Grayscale filter
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                   />
-                  {/* Original Color Image */}
-                  <img
-                    src={`http://localhost:8070/uploads/${album.images[0].filename}`}
-                    alt={album.images[0].filename}
-                    className="w-full h-full object-cover transition-all duration-300 group-hover:opacity-100 absolute top-0 left-0 opacity-0"
-                  />
-                  <div className="absolute inset-0"></div>
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 </div>
               )}
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold mb-3 text-[#FFFFFF]">
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-[#FFFFFF]">
                   {album.Name}
                 </h3>
-                <p className="text-[#FFFFFF] mb-6">{album.Album_Category}</p>
+                <p className="text-[#FFD700] text-sm sm:text-base mb-4 sm:mb-6">
+                  {album.Album_Category}
+                </p>
                 <Link
                   to={`/album/${album._id}`}
-                  className="inline-block text-[#D32F2F] font-semibold hover:text-[#FF0000] transition-all duration-300 transform hover:scale-105"
+                  className="inline-block text-[#FFD700] font-semibold hover:text-[#FF0000] transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
                 >
-                  View Album
+                  View Album →
                 </Link>
               </div>
             </motion.div>

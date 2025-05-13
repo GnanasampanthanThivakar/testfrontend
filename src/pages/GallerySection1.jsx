@@ -53,7 +53,7 @@ const GallerySection = () => {
             educational gatherings, corporate and commercial experiences, and
             more.
           </p>
-          <button className="bg-[#780000] hover:bg-[#FF0000] text-white font-medium px-4 py-2 text-sm rounded-md md:text-base">
+          <button className="bg-[#780000] hover:bg-[#950000] text-white font-medium px-4 py-2 text-sm rounded-md md:text-base">
             Read More
           </button>
         </div>
@@ -107,7 +107,7 @@ const GallerySection = () => {
             creativity and precision. Let us preserve your memories beautifully.{" "}
             <strong>Contact us today</strong>!
           </p>
-          <button className="bg-[#780000] hover:bg-[#FF0000] text-white px-4 py-2 text-sm rounded-md w-40 md:text-base">
+          <button className="bg-[#780000] hover:bg-[#950000] text-white px-4 py-2 text-sm rounded-md w-40 md:text-base">
             Read More
           </button>
         </div>

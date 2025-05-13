@@ -41,7 +41,7 @@ export default function Navbar() {
               Gallery
             </NavLink>
             <NavLink to="/video" isActive={location.pathname === "/video"}>
-              Services
+            cinematography
             </NavLink>
             <NavLink to="/contact" isActive={location.pathname === "/contact"}>
               Contact

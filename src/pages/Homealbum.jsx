@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
-import { motion } from 'framer-motion'; // Import Framer Motion for animations
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import { motion } from "framer-motion"; // Import Framer Motion for animations
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function Homealbum() {
   const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:8070/photographyweb/getdetails')
-      .then(response => setAlbums(response.data.slice(0, 10))) // Show up to 10 albums
-      .catch(error => console.error('Error fetching albums:', error));
+      .get("http://localhost:8070/photographyweb/getdetails")
+      .then((response) => setAlbums(response.data.slice(0, 10))) // Show up to 10 albums
+      .catch((error) => console.error("Error fetching albums:", error));
   }, []);
 
   const settings = {
@@ -58,8 +58,8 @@ function Homealbum() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className='font-light'>
-        Our Lovely Moments <span className="text-[#FFD700]">Showcase</span>
+        <h2 className="font-light">
+          Our Lovely Moments <span className="text-[#FFD700]">Showcase</span>
         </h2>
       </motion.h2>
       <div className="container mx-auto px-10">
